@@ -1,0 +1,100 @@
+nav {
+    position: sticky;
+    top: 0;
+
+    width: 100%;
+
+    padding: 1rem 0;
+
+    background: white;
+    border-bottom: 1px solid rgba(233, 233, 233, 1);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition: top .4s;
+}
+nav.hidden {
+    top: -10%;
+    
+    transition: top .4s;
+}
+
+.navbar-container {
+    width: 50%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu-elem {
+    position: relative
+}
+
+.title {
+    font-weight: bold;
+}
+
+.openable::after {
+    content: url("../../../public/arrow_down.svg");
+
+    position: absolute;
+    top: -2px;
+    right: -14px;
+}
+
+.list {
+    position: absolute;
+    top: 178%;
+
+    width: 150px;
+
+    padding: 1rem;
+
+    background: white;
+    border: 1px solid rgba(233, 233, 233, 1);
+
+    text-align: left;
+    font-size: .8rem;
+    
+    list-style: none;
+
+    display: none;
+}
+
+.list ul {
+    padding: 0;
+    margin: 0;
+    
+    list-style: none;
+}
+
+.menu-elem:hover>.list {
+    display: block;
+}
+
+.list li {
+    padding: .3rem 0;
+
+    border-bottom: 1px solid rgba(233, 233, 233, 1);
+}
+
+.list li::after {
+    content: url("../../../public/arrow_right.svg");
+
+    position: absolute;
+    right: 8%;
+}
+
+.list .disabled {
+    padding-left: .5rem;
+
+    color: rgba(150, 150, 150, 1);
+}
+
+.list li:last-child {
+    border: none;
+}
